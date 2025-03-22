@@ -1,5 +1,10 @@
+html {
+  height: 100%
+}
 body {
   @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+  background: linear-gradient(#B068E9,#6463E7);
+  height: 100%;
 }
 
 h1 {
@@ -10,15 +15,15 @@ h1 {
 .container {
   font-family: 'Kumbh Sans', sans-serif;
   font-size: 12px;
-  background: linear-gradient(#B068E9,#6463E7);
   background-size: 100vw 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+  justify-content: space-around;
+  height: 100%;
 }
+
 .main {
+  align-self: center;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,20 +31,33 @@ h1 {
   max-width: 920px;
   max-height: 509px;
   border-radius: 23px;
-  margin: auto;
   background-image: url(../images/bg-pattern-desktop.svg);
+  background-position: -510px 72%;
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 .main__img {
   width: 100%;
   height: 100%;
-  display: block;
+  display: flex;
   position: relative;
+  overflow: hidden;
+}
+
+.main__img-box--desktop {
+  position: absolute;
+  left: -90px;
+  top: 200px;
+  z-index: 100;
 }
 
 .main__img--desktop {
+  position: relative;
   display: block;
-  left: 50px;
+  left: -70px;
+  margin: auto;
+  /* width: 100%; */
 }
 
 .main__img--mobile {
@@ -84,7 +102,9 @@ h1 {
   .main__img--desktop {
     display: none;
   }
-
+  .main__img-box--desktop {
+    display: none;
+  }
   .main__img--mobile {
     display: block;
   }
