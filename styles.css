@@ -4,6 +4,7 @@ html {
 body {
   @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
   background: linear-gradient(#B068E9,#6463E7);
+  font-family: 'Kumbh Sans', sans-serif;
   height: 100%;
 }
 
@@ -13,7 +14,6 @@ h1 {
 }
 
 .container {
-  font-family: 'Kumbh Sans', sans-serif;
   font-size: 12px;
   background-size: 100vw 100vh;
   display: flex;
@@ -57,7 +57,6 @@ h1 {
   display: block;
   left: -70px;
   margin: auto;
-  /* width: 100%; */
 }
 
 .main__img--mobile {
@@ -71,19 +70,50 @@ h1 {
   padding: 50px;
 }
 
-.dialog__item {
+input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+label {
+  position: relative;
+  display: block;
+  width: 100%;
+  color: #4B4C5F;
+  font-size: 14px;
+}
+
+label::after {
+  content: '';
+  background-image: url('./images/icon-arrow-down.svg');
+  transform: rotate(-90deg);
+  position: absolute;
+  width: 10px;
+  height: 7px;
+  right: 0;
+  transition: all 0.35s;
+}
+
+.accordion__container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  min-height: 285px;
+  justify-content: space-between;
+}
+
+.accordion__item {
   padding: 10px;
 }
 
-.dialog__container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  max-width: 350px;
+.accordion__content {
+  max-height: 0;
+  transition: all 0.35s;
+  overflow: hidden;
 }
 
-.dialog__question {
+.accordion__title {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -92,9 +122,22 @@ h1 {
   font-size: 14px;
 }
 
+input:checked + label::after {
+  transform: rotate(5deg);
+}
+
+input:checked ~ .accordion__content {
+  max-height: 1000px;
+  padding: 10px 0;
+}
+
 @media screen and (max-width: 420px) {
+  h1 {
+    text-align: center;
+  }
   .main {
     max-width: 327px;
+    min-height: 535px;
     flex-direction: column;
     align-content: center;
   }
@@ -107,6 +150,9 @@ h1 {
   }
   .main__img--mobile {
     display: block;
+    position: absolute;
+    top: -14%;
+    width: 50%;
   }
 
   .faq__container {

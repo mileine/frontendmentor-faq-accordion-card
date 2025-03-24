@@ -15,55 +15,45 @@
   <div class="container">
     <main class="main">
       <img class="main__img-box--desktop" src="./images/illustration-box-desktop.svg" alt="">  
+      <img class="main__img--mobile" src="./images/illustration-woman-online-mobile.svg" alt="">
       <div class="main__img">
         <img class="main__img--desktop" src="./images/illustration-woman-online-desktop.svg"/>
-        <img class="main__img--mobile" src="./images/illustration-woman-online-mobile.svg" alt="">
       </div>
       <div class="faq__container">
         <h1>FAQ</h1>
-        <div class="dialog__container">
-          <div class="dialog__item">
-            <div class="dialog__question">
-              <h2>How many team members can I invite?</h2>
-              <img src="./images/icon-arrow-down.svg" alt="arrow down" />
-            </div>
-            <div class="dialog__answer">
+        <div class="accordion__container">
+          <div class="accordion__item">
+            <input type="checkbox" id="tab1">
+            <label class="collapsible-item-label" for="tab1">How many team members can I invite?</label>
+            <div class="accordion__content">
               <p>You can invite up to 2 additional users on the Free plan. There is no limit on team members for the Premium plan.</p>
             </div>
           </div>
-          <div class="dialog__item">
-            <div class="dialog__question">
-              <h2>What is the maximum file upload size?</h2>
-              <img src="./images/icon-arrow-down.svg" alt="arrow down" />
-            </div>
-            <div class="dialog__answer">
+          <div class="accordion__item">
+            <input type="checkbox" id="tab2">
+            <label class="collapsible-item-label" for="tab2">What is the maximum file upload size?</label>
+            <div class="accordion__content">
               <p>No more than 2GB. All files in your account must fit your allotted storage space.</p>
             </div>
           </div>
-          <div class="dialog__item">
-            <div class="dialog__question">
-              <h2>How do I reset my password?</h2>
-              <img src="./images/icon-arrow-down.svg" alt="arrow down" />
-            </div>
-            <div class="dialog__answer">
+          <div class="accordion__item">
+            <input type="checkbox" id="tab3">
+            <label class="collapsible-item-label" for="tab3">How do I reset my password?</label>
+            <div class="accordion__content">
               <p>Click “Forgot password” from the login page or “Change password” from your profile page. A reset link will be emailed to you.</p>
             </div>
           </div>
-          <div class="dialog__item">
-            <div class="dialog__question">
-              <h2>Can I cancel my subscription?</h2>
-              <img src="./images/icon-arrow-down.svg" alt="arrow down" />
-            </div>
-            <div class="dialog__question">
+          <div class="accordion__item">
+            <input type="checkbox" id="tab4">
+            <label class="collapsible-item-label" for="tab4">Can I cancel my subscription?</label>
+            <div class="accordion__content">
               <p>Yes! Send us a message and we’ll process your request no questions asked.</p>
             </div>
           </div>
-          <div class="dialog__item">
-            <div class="dialog__question">
-              <h2>Do you provide additional support?</h2>
-              <img src="./images/icon-arrow-down.svg" alt="arrow down" />
-            </div>
-            <div class="dialog__answer">
+          <div class="accordion__item">
+            <input type="checkbox" id="tab5">
+            <label class="collapsible-item-label" for="tab5">Do you provide additional support?</label>
+            <div class="accordion__content">
               <p>Chat and email support is available 24/7. Phone lines are open during normal business hours.</p>
             </div>
           </div>
