@@ -1,8 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
 html {
   height: 100%
 }
 body {
-  @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
   background: linear-gradient(#B068E9,#6463E7);
   font-family: 'Kumbh Sans', sans-serif;
   height: 100%;
@@ -70,7 +70,7 @@ h1 {
   padding: 50px;
 }
 
-input[type="checkbox"] {
+input[type="radio"] {
   position: absolute;
   opacity: 0;
   z-index: -1;
@@ -104,13 +104,16 @@ label::after {
 }
 
 .accordion__item {
-  padding: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #E8E8EA;
 }
 
 .accordion__content {
   max-height: 0;
   transition: all 0.35s;
   overflow: hidden;
+  color: #787887;
+  line-height: 18px;
 }
 
 .accordion__title {
@@ -122,13 +125,32 @@ label::after {
   font-size: 14px;
 }
 
-input:checked + label::after {
+.collapsible-item-label:hover {
+  cursor: pointer;
+  color: #F47B56;
+}
+
+.accordion__item input:checked + .collapsible-item-label::after {
   transform: rotate(5deg);
 }
 
-input:checked ~ .accordion__content {
+.accordion__item input:checked + .collapsible-item-label {
+  color: #4B4C5F;
+  font-weight: 700;
+}
+
+.accordion__item input:checked ~ .accordion__content {
   max-height: 1000px;
   padding: 10px 0;
+}
+
+.accordion__item input:not(:checked) + .collapsible-item-label:hover::after {
+  transform: rotate(-5deg);
+}
+
+.accordion__item input:not(:checked) ~ .accordion__content {
+  max-height: 0;
+  padding: 0;
 }
 
 @media screen and (max-width: 420px) {
