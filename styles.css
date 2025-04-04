@@ -11,6 +11,7 @@ body {
 h1 {
   font-size: 32px;
   font-weight: 700;
+  margin-bottom: 20px;
 }
 
 .container {
@@ -29,7 +30,6 @@ h1 {
   justify-content: center;
   background-color: #fff;
   max-width: 920px;
-  max-height: 509px;
   border-radius: 23px;
   background-image: url(../images/bg-pattern-desktop.svg);
   background-position: -510px 72%;
@@ -47,8 +47,8 @@ h1 {
 
 .main__img-box--desktop {
   position: absolute;
-  left: -90px;
-  top: 200px;
+  left: -92px;
+  top: 223px;
   z-index: 100;
 }
 
@@ -68,6 +68,9 @@ h1 {
   display: flex;
   flex-direction: column;
   padding: 50px;
+  height: auto;
+  min-height: 509px;
+  transition: none;
 }
 
 input[type="radio"] {
@@ -92,19 +95,17 @@ label::after {
   width: 10px;
   height: 7px;
   right: 0;
+  top: 4px;  
   transition: all 0.35s;
 }
 
 .accordion__container {
   display: flex;
   flex-direction: column;
-  padding: 10px;
   min-height: 285px;
-  justify-content: space-between;
 }
 
 .accordion__item {
-  padding: 10px 0;
   border-bottom: 1px solid #E8E8EA;
 }
 
@@ -130,18 +131,28 @@ label::after {
   color: #F47B56;
 }
 
+.accordion__item--title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 19px 0;
+}
+
 .accordion__item input:checked + .collapsible-item-label::after {
   transform: rotate(5deg);
 }
+.accordion__item input:checked + .accordion__item--title .collapsible-item-label::after {
+  transform: rotate(5deg);
+}
 
-.accordion__item input:checked + .collapsible-item-label {
+.accordion__item input:checked + .accordion__item--title .collapsible-item-label {
   color: #4B4C5F;
   font-weight: 700;
 }
 
 .accordion__item input:checked ~ .accordion__content {
-  max-height: 1000px;
-  padding: 10px 0;
+  max-height: 500px;
+  padding: 0 0 19px 0;
 }
 
 .accordion__item input:not(:checked) + .collapsible-item-label:hover::after {
