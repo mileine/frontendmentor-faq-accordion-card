@@ -117,15 +117,6 @@ label::after {
   line-height: 18px;
 }
 
-.accordion__title {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 0;
-  color: #4B4C5F;
-  font-size: 14px;
-}
-
 .collapsible-item-label:hover {
   cursor: pointer;
   color: #F47B56;
@@ -136,6 +127,11 @@ label::after {
   align-items: center;
   justify-content: space-between;
   padding: 19px 0;
+  color: #4B4C5F;
+  font-size: 14px;
+  font-weight: 400;
+  transition: all 0.35s;
+  cursor: pointer;
 }
 
 .accordion__item input:checked + .collapsible-item-label::after {
